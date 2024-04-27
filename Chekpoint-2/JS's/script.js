@@ -11,6 +11,7 @@ function nao_18(){
 
 var add = 0;
 var cont = 0;
+var vinhos = (cont>1)? "vinhos":"vinho";
 
 function verMais(){
     window.location.href = "info.html";
@@ -19,19 +20,25 @@ function adicionar(){
     add+=1699
     cont++
     var um = cont>1?"Mais um":"Um";
-    alert(`${um} vinho adicionado ao carrinho!`);
+    var total = cont
+    alert(`Adicionado ao carrinho com sucesso!\n Total adicionado:${total}`);
     console.log(add)
     console.log(cont)
 }
+var contadorCliques = 0;
 function desconto(){
     var desc = document.getElementById("cupom").value;
     var validacao = document.getElementById("validacao");
-    
-    if (desc == "FIAP2024"){
-        add = add - ((add*10)/100);
-        validacao.innerText = "O cupom de desconto de 10% foi \n adicionado com sucesso! \n Ao adicionar o cupom clique em calcular o preco novamente para seu cupom ser adicionado!"
-    }
 
+    if (desc == "FIAP2024"){
+        if (contadorCliques < 1)
+            add = add - ((add*10)/100);
+            validacao.innerText = `O cupom de desconto de 10% foi \n adicionado com sucesso! \n Ao adicionar o cupom clique em calcular o preco novamente para seu cupom ser adicionado!`
+            contadorCliques++
+        }else {
+            console.log('CUPOM INVÁLIDO')
+            validacao.innerText = "CUPOM INVÁLIDO!"
+        }  
 }
 
 function calc(){
@@ -40,6 +47,7 @@ function calc(){
     var vinhos = (cont>1)? "vinhos":"vinho"
     preco.innerText = `O valor das suas compras foi de R$${add.toFixed(2)} \n Com ${cont} ${vinhos} no carrinho!`;
 }
+
 function login(){
     var emai = parseInt(document.getElementById("email").value);
     var sena = parseInt(document.getElementById("senha").value);
@@ -53,8 +61,8 @@ function voltar(){
     window.location.href = "index.html";
 }
 
-function sujestoes(){
-    window.location.href = "sujestoes.html";
+function sugestoes(){
+    window.location.href = "sugestoes.html";
 }
 
 function Enviar(){
@@ -65,7 +73,34 @@ function Enviar(){
 
     if(nome != '' && telefone != '' && email != '' && mensagem != ''){
         alert("Mensagem enviada com sucesso!")
-    }else{
+        window.location.href = "index.html";
+    }
+    else{
         alert("Precisa finalizar o cadastro")
     }
+}
+
+function form(){
+    window.location.href = "form.html";
+}
+
+function semproduto(){
+    window.location.href = "semproduto.html";
+}
+function carrinho(){
+    window.location.href = "carrinho.html";
+}
+function logout(){
+    window.location.href = "Pagina Inicial.html";
+}
+
+function comentar(){
+    alert(`Comentário enviado com sucesso!`);
+}
+function favoritar(){
+    alert(`Favoritado!`);
+}
+function desejos(){
+alert(`Adicionado a lista de desejos!`);
+
 }

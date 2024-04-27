@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,201 @@
     <link rel="stylesheet" href="/Chekpoint-2/CSS's/vermais.css">
     <link rel="html" href="index.html">
 </head>
+<style>
+    .car {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        border: 6px solid rgba(0, 0, 0, 0.521);
+        margin: 30px;
+        padding: 30px;
+        gap: 30px;
+        text-align: center;
+        height: 550px;
+    }
+
+    button {
+        border: 0.4px solid rgba(58, 8, 8, 0.452);
+        width: 8rem;
+    }
+
+    .alinhar {
+        display: flex;
+        gap: 30px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .comentarios {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+
+    }
+
+    .comentarios h2 {
+        font-size: 50px;
+    }
+
+    .comentarios p {
+
+        font-size: large;
+        border: 5px solid white;
+        font-style: none;
+        width: 900px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .comentarios input {
+        width: 400px;
+        padding: 40px;
+        height: 5px;
+    }
+
+    .comentarios textarea {
+        width: 480px;
+        height: 100px;
+        padding: 0px;
+    }
+
+    .comentarios button {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .comentarios label {
+        border: 1px solid black;
+        width: fit-content;
+        padding: 10px;
+        background-color: rgb(37, 25, 25);
+    }
+
+    .alinhar img {
+        height: 45px;
+        width: 50px;
+    }
+
+    .favorito {
+        border: 2px solid gray;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .favorito a {
+        color: black;
+        font-style: none;
+    }
+    .desejo img{
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .desejo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        padding: 30px;
+        margin: 0;
+        width: 100px;
+        align-items: center;
+    }
+    .desejo a{
+        color: white;
+    }
+</style>
+
 <body>
     <div class="container">
         <div>
-            <img src="https://img.lpqvstatic.com/_IeOOHwuHdfug8eMbrZa9oIniKA=/fit-in/1200x0/filters:upscale()/https://app.lpqv.com.br/uploads/1855wines/products/63/images/275fe8969ea3f8268034e4c52c47531f.jpg" alt="">
+            <img src="https://img.lpqvstatic.com/_IeOOHwuHdfug8eMbrZa9oIniKA=/fit-in/1200x0/filters:upscale()/https://app.lpqv.com.br/uploads/1855wines/products/63/images/275fe8969ea3f8268034e4c52c47531f.jpg"
+                alt="">
         </div>
-        
-        
-        
+
+
         <div class="tudo">
+            <div class="desejo">
+                <a onclick="desejos()" href="#">Adicionar a lista de desejos</a>
+                <img src="https://cdn-icons-png.flaticon.com/128/4379/4379561.png" alt="desejo">
+            </div>
 
-            <div class = "info ajustes">
+            <div class="info-ajustes">
                 <h1>CHÂTEAU PONTET-CANET</h1>
-    
-                <p>Em 2004, com o objetivo de melhorar a qualidade do Merlot, os primeiros 14 hectares de Pontet-Canet foram convertidos para biodinâmica que trouxe uma nova dimensão aos rótulos da propriedade. As práticas, cada vez mais respeitadoras do equilíbrio natural, têm proporcionado vinhos puros e vibrantes, como o Château Pontet-Canet. 
+
+                <p>Em 2004, com o objetivo de melhorar a qualidade do Merlot, os primeiros 14 hectares de Pontet-Canet
+                    foram convertidos para biodinâmica que trouxe uma nova dimensão aos rótulos da propriedade. As
+                    práticas, cada vez mais respeitadoras do equilíbrio natural, têm proporcionado vinhos puros e
+                    vibrantes, como o Château Pontet-Canet.
                 </p>
                 <p>
-                    A implantação da biodinâmica levou a propriedade a respeitar melhor a natureza e a perceber que quanto mais ela é respeitada, mais generosa ela se torna. Com regresso ao essencial, o processo é preenchido com momentos que garantem superioridade, como a colocação em cubas seguida da vinificação sem máquina e sem ruído, apenas pela mão humana.
+                    A implantação da biodinâmica levou a propriedade a respeitar melhor a natureza e a perceber que
+                    quanto mais ela é respeitada, mais generosa ela se torna. Com regresso ao essencial, o processo é
+                    preenchido com momentos que garantem superioridade, como a colocação em cubas seguida da vinificação
+                    sem máquina e sem ruído, apenas pela mão humana.
                 </p>
                 <p>
 
-                     Sabor Harmônico, associando estrutura tânica delicada e sedosa, profundidade reconfortante e comprimento com bastante mineralidade.
-                </p>   
-                <p>
-                     Aromas Frutados, florais, minerais e frescos, criando um elegante equilíbrio.
+                    Sabor Harmônico, associando estrutura tânica delicada e sedosa, profundidade reconfortante e
+                    comprimento com bastante mineralidade.
                 </p>
-                    
                 <p>
-                     Tinto Temperatura ideal: 16°C a 18°C</p>
+                    Aromas Frutados, florais, minerais e frescos, criando um elegante equilíbrio.
+                </p>
+
+                <p>
+                    Tinto Temperatura ideal: 16°C a 18°C</p>
                 </p>
             </div>
-            <div class="info price">
+            <div class="info-price">
                 <h2>R$ 1.699,00</h2>
-                
-                <button onclick="adicionar()">Adicionar ao carrinho</button>
-                
-                <a onclick="voltar()"><button>&lt; voltar</button></a>
+                <div class="alinhar">
+                    <button onclick="adicionar()">Adicionar ao carrinho</button>
+                    <a onclick="voltar()"><button>Voltar</button></a>
+                    <div class="favorito">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4208/4208394.png" alt="fav">
+                        <a onclick="favoritar()">Favoritar</a>
+                    </div>
+                </div>
             </div>
-            <div id="precos">
-                <div class="calculadora">
-                    <h2>Total compras </h2>
-                    <button onclick="calc()">Calcular</button>
-                    <p id="total"></p>
-                </div>
-                <div class="desconto">
-                    <h2>Cupom de Desconto</h2>
-                    <label for="cupom">Cupom:</label>
-                    <input type="text" id="cupom">
-                    <button onclick="desconto()">Validar</button>
-                    <p id="validacao"></p>
-                </div>
+
+        </div>
+        <div class="car">
+            <div class="carrinho">
+                <h2> Carrinho:</h2>
+                <button onclick="calc()">Total</button>
+                <p id="total"></p>
+            </div>
+            <div class="desconto">
+                <h2>Cupom de Desconto</h2>
+                <label for="cupom">Cupom:</label>
+                <input type="text" id="cupom"><br><br><br>
+                <button onclick="desconto()">Validar</button>
+                <p id="validacao"></p>
             </div>
         </div>
     </div>
+    <div class="comentarios">
+        <h2>Comentários:</h2>
+        <label for="voce">VOCÊ</label>
+        <input type="text" value=""><br>
+        <button onclick="comentar()" type="button">Comentar</button><br><br>
+        <label for="coment">Anônimo 21</label>
+        <textarea name="" id="" cols="30" rows="10">Ótimos vinhos!</textarea><br><br>
+        <label for="coment">Anônimo 21</label>
+        <textarea name="" id="" cols="30" rows="10">Amei a experiência!</textarea>
+    </div>
     <script src="/Chekpoint-2/JS's/script.js"></script>
 </body>
+
 </html>
